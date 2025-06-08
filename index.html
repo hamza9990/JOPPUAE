@@ -1,1 +1,307 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فرص عمل في السعودية والإمارات - سجل الآن</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+  <style>
+    /* Global Styles & Reset */
+    :root {
+      --primary-color: #00aaff; /* Blue */
+      --secondary-color: #28a745; /* Green */
+      --dark-blue: #0288d1;
+      --light-green: #d4edda;
+      --mid-green: #e9f7ef;
+      --text-color: #333;
+      --dark-text-color: #155724;
+      --bg-light: #f4f6f9;
+      --shadow-light: rgba(0, 0, 0, 0.1);
+      --shadow-medium: rgba(0, 0, 0, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-color);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Ensures footer sticks to bottom */
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      border-bottom: 5px solid var(--dark-blue);
+      box-shadow: 0 4px 10px var(--shadow-light);
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      font-weight: 700; /* Cairo bold */
+    }
+
+    header p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    /* Main Content Area */
+    main {
+      flex-grow: 1; /* Allows main content to take available space */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px; /* Added padding to main for better spacing */
+    }
+
+    /* Steps Section */
+    .steps-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px; /* Increased gap for better separation */
+      background-color: var(--mid-green);
+      border-radius: 15px;
+      padding: 40px 20px;
+      margin: 40px auto;
+      width: 90%; /* Slightly wider for better content distribution */
+      max-width: 800px; /* Increased max-width */
+      box-shadow: 0 6px 15px var(--shadow-light); /* Stronger shadow */
+      flex-wrap: wrap; /* Allows steps to wrap on smaller screens */
+      align-items: stretch; /* Ensures steps have equal height */
+    }
+
+    .step {
+      background-color: var(--light-green);
+      border-radius: 10px; /* Slightly more rounded */
+      padding: 25px 30px;
+      text-align: center;
+      flex: 1; /* Allows steps to grow and shrink */
+      min-width: 280px; /* Minimum width for step boxes */
+      max-width: 350px;
+      box-shadow: 0 4px 12px var(--shadow-light);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .step:hover {
+      transform: translateY(-5px) scale(1.02); /* Lift and slight scale */
+      box-shadow: 0 8px 18px var(--shadow-medium);
+    }
+
+    .step h2 {
+      font-size: 20px;
+      color: var(--dark-text-color);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: var(--dark-text-color);
+    }
+
+    /* Animated Icon */
+    .animated-icon {
+      text-align: center;
+      margin: 30px 0 50px 0; /* Adjusted margin */
+    }
+
+    .animated-icon img {
+      width: 450px; /* Increased by 50% from 300px (300 * 1.5 = 450) */
+      max-width: 90%; /* Adjusted max-width for responsiveness */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px; /* Soften edges */
+      box-shadow: 0 6px 15px var(--shadow-light);
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bounce effect */
+    }
+
+    .animated-icon img:hover {
+      transform: scale(1.15) rotate(2deg); /* More pronounced effect */
+    }
+
+    /* CTA Button */
+    .cta-button-wrapper {
+      text-align: center;
+      margin-bottom: 60px; /* More space before footer */
+    }
+
+    .cta-button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 18px 40px; /* Larger padding for a more prominent button */
+      border-radius: 50px; /* Pill-shaped button */
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 12px var(--shadow-medium);
+      letter-spacing: 0.5px;
+    }
+
+    .cta-button:hover {
+      background-color: var(--dark-blue);
+      transform: translateY(-3px) scale(1.02); /* Lift and slight scale */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .cta-button:active {
+      transform: translateY(1px); /* Push down on click */
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 15px;
+      color: #666; /* Slightly darker grey for better contrast */
+      padding: 20px;
+      background-color: #e0e4eb; /* Soft light grey background */
+      border-top: 1px solid #c2c9d1;
+      margin-top: auto; /* Pushes footer to the bottom */
+    }
+
+    .social-links {
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      margin: 0 12px;
+      color: var(--dark-blue);
+      text-decoration: none;
+      font-size: 24px; /* Slightly larger icons */
+      transition: color 0.3s ease, transform 0.2s ease;
+      display: inline-block; /* Allows transform */
+    }
+
+    .social-links a:hover {
+      color: var(--primary-color);
+      transform: translateY(-3px); /* Lift effect on hover */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 24px;
+      }
+
+      header p {
+        font-size: 14px;
+      }
+
+      .steps-container {
+        flex-direction: column;
+        width: 95%;
+        padding: 30px 15px;
+        margin: 30px auto;
+        gap: 20px;
+      }
+
+      .step {
+        width: 100%;
+        max-width: none; /* Remove max-width on smaller screens */
+        padding: 20px;
+      }
+
+      .animated-icon img {
+        width: 350px; /* Adjusted for smaller screens, 250 * 1.5 = 375, rounded to 350 */
+        max-width: 90%;
+      }
+
+      .cta-button {
+        padding: 16px 30px;
+        font-size: 18px;
+        width: 90%; /* Make button take more width */
+        max-width: 300px;
+      }
+
+      footer {
+        padding: 15px;
+        font-size: 13px;
+      }
+
+      .social-links a {
+        font-size: 22px;
+        margin: 0 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 20px;
+      }
+
+      .animated-icon img {
+        width: 280px; /* Adjusted for even smaller screens */
+      }
+
+      .cta-button {
+        padding: 14px 25px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>فرص عمل حقيقية في السعودية والإمارات</h1>
+    <p>سجل الآن للحصول على فرص عمل مميزة في أسرع وقت</p>
+  </header>
+
+  <main>
+    <section class="steps-container">
+      <div class="step">
+        <h2>الخطوة 1: أدخل رقمك</h2>
+        <p>أدخل رقم الهاتف الخاص بك لتأكيده والمتابعة في عملية التسجيل.</p>
+      </div>
+      <div class="step">
+        <h2>الخطوة 2: أكمل استمارة</h2>
+        <p>املأ استمارة التقديم الشاملة لتحديد المجالات الوظيفية المتاحة التي تناسبك.</p>
+      </div>
+    </section>
+
+    <div class="animated-icon">
+      <img src="https://i.ibb.co/mTgqSqd/sms.gif" alt="رسالة متحركة">
+    </div>
+
+    <div class="cta-button-wrapper">
+      <button class="cta-button" onclick="startChat()">ابدأ الآن</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>جميع الحقوق محفوظة &copy; 2025</p>
+    <div class="social-links">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    function startChat() {
+      // هذا السطر يقوم بتوجيه المستخدم إلى الرابط المطلوب عند النقر على الزر
+      window.location.href = 'https://smrturl.co/3481b59';
+    }
+  </script>
+
+</body>
+</html>
